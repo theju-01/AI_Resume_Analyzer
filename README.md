@@ -84,6 +84,9 @@ http://127.0.0.1:5000
 -Recruitment support system
 -NLP learning project
 
+🔗 Live Demo :
+https://ai-resume-analyzer-ljq3.onrender.com
+
 👩‍💻 Author
 S B THEJASWINI
 B.Tech – CSE (Artificial Intelligence & Machine learning)
