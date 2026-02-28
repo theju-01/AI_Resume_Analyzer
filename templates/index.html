@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Resume Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>AI Resume Analyzer</h1>
+
+    <form method="POST">
+        <textarea name="resume_text" placeholder="Paste your resume here..." required></textarea>
+        <button type="submit">Analyze</button>
+    </form>
+
+    {% if result %}
+<div class="result">
+    <h2>Resume Score: {{ result.score }} / 100</h2>
+
+    <h3>Technical Skills:</h3>
+    <ul>
+        {% for skill in result.technical_skills %}
+        <li>{{ skill }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Soft Skills:</h3>
+    <ul>
+        {% for skill in result.soft_skills %}
+        <li>{{ skill }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Education Keywords Found:</h3>
+    <ul>
+        {% for edu in result.education %}
+        <li>{{ edu }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Experience Indicators:</h3>
+    <ul>
+        {% for exp in result.experience %}
+        <li>{{ exp }}</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Suggestions:</h3>
+    <ul>
+        {% for suggestion in result.suggestions %}
+        <li>{{ suggestion }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endif %}
